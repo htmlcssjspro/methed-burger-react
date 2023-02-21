@@ -111,9 +111,6 @@ fieldset {
   outline-color: #FFAB08;
 }
 
-.currency {
-  font-weight: 400;
-}
 
 @media (min-width: 480px) {
   .modal {
