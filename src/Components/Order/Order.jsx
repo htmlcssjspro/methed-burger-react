@@ -1,8 +1,14 @@
 import classNames from 'classnames';
 import style from './Order.module.css';
 import burger from '../../assets/img/burger1.jpg';
-import Count from '../Count/Count';
 import Currency from '../Currency/Currency';
+import OrderItem from './OrderItem';
+
+const orderList = [
+    { title: 'Супер сырный' },
+    { title: 'Картошка фри' },
+    { title: 'Жгучий хот-дог' },
+];
 
 export default function Order({ className }) {
     return (
@@ -14,17 +20,11 @@ export default function Order({ className }) {
                 </div>
                 <div className={style['wrap-list']}>
                     <ul className={style.list}>
-                        <li className={style.item}>
-                            <img src={burger}
-                                alt="Супер сырный"
-                                className={style.image} />
-                            <div className={style.product}>
-                                <h3 className={style['product-title']}>Супер сырный</h3>
-                                <p className={style['product-weight']}>512г</p>
-                                <p className={style['product-price']}>550₽</p>
-                            </div>
-                            <Count className={style['product-count']} />
-                        </li>
+                        {orderList.map(item => (
+                            <li className={style.item}>
+                                <OrderItem title={item.title} image={burger} weight="512" price="550" />
+                            </li>
+                        ))}
                     </ul>
                     <div className={style.total}>
                         <p>Итого</p>

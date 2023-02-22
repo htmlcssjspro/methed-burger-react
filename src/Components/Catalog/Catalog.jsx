@@ -5,8 +5,16 @@ import style from './Catalog.module.css';
 
 import burger from '../../assets/img/burger6.jpg';
 
+const goodsList = [
+    { title: 'Мясная бомба' },
+    { title: 'Супер сырный' },
+    { title: 'Сытный' },
+    { title: 'Итальянский' },
+    { title: 'Вечная классика' },
+    { title: 'Тяжелый удар' },
+];
 
-export default function Catalog(props) {
+export default function Catalog() {
     return (
         <section className={style.catalog}>
             <Container className={style.container}>
@@ -14,9 +22,12 @@ export default function Catalog(props) {
                 <div className={style.wrapper}>
                     <h3 className={style.title}>Бургеры</h3>
                     <ul className={style.list}>
-                        <li className={style.item}>
-                            <Product title='Мясная бомба' img={burger} price='685' weight='520' />
-                        </li>
+                        {goodsList.map(item => (
+                            <li className={style.item}>
+                                <Product title={item.title} img={burger} price='685' weight='520' />
+                            </li>
+                        ))}
+
                     </ul>
                 </div>
             </Container>

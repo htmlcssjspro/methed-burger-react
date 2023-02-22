@@ -1,11 +1,23 @@
+import { useState } from 'react';
 import classNames from 'classnames';
 import style from './Count.module.css';
-export default function Count({ className }) {
+export default function Count(props) {
+    const [count, setCount] = useState(props.count);
+
+    const plus = () => {
+        setCount(count + 1);
+    };
+    const minus = () => {
+        if (count > 1) {
+            setCount(count - 1);
+        }
+    };
+
     return (
-        <div className={classNames(style.count, className)}>
-            <button className={style.minus}>-</button>
-            <p className={style.amount}>1</p>
-            <button className={style.plus}>+</button>
+        <div className={classNames(style.count, props.className)}>
+            <button className={style.minus} onClick={minus} disabled={count === 1}>-</button>
+            <p className={style.amount}>{count}</p>
+            <button className={style.plus} onClick={plus}>+</button>
         </div>
     );
 }
