@@ -1,11 +1,10 @@
-import Container from '../Container/Container';
 import style from './Footer.module.css';
 import sprite from '../../assets/img/sprite.svg';
 
 export default function Footer() {
     return (
         <footer className={style.footer}>
-            <Container>
+            <div className="container">
                 <div className={style.content}>
                     <svg
                         className={style.logo}
@@ -69,7 +68,7 @@ export default function Footer() {
                         href="#"
                     >Design: Anastasia Ilina</a>
                 </div>
-            </Container>
+            </div>
         </footer>
     );
 }

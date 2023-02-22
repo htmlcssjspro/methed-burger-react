@@ -1,10 +1,13 @@
 .navigation {
-    margin-bottom: 30px;
+    // margin-bottom: 30px;
 }
 
 .container {
-    padding: 0;
-    min-width: 100vw;
+    // padding: 0;
+    // min-width: 100vw;
+}
+
+.content {
 }
 
 .list {
@@ -18,7 +21,7 @@
     font-size: 12px;
     line-height: 16px;
     padding: 7px 8px 7px 40px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     background-size: 24px;
     background-position: 8px center;
     background-repeat: no-repeat;
@@ -30,11 +33,11 @@
 
 .button:hover,
 .button:focus-visible {
-    border-color: #F86310;
+    border-color: #f86310;
 }
 
 .button_active {
-    background-color: #FFAB08;
+    background-color: #ffab08;
     pointer-events: none;
 }
 
@@ -73,7 +76,6 @@
 .button_sauce {
     background-image: url('../../assets/img/sauce.png');
 }
-
 
 @media (min-width: 768px) {
     .list {

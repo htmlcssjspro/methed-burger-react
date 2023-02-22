@@ -1,0 +1,65 @@
+//* bootstrap examples
+$breakpoint-xl: 1200px;
+$breakpoint-lg: 992px;
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+$breakpoint-xs: 0;
+
+//* my examples
+$max-width-sm: 540px;
+$max-width-md: 720px;
+$max-width-lg: 960px;
+$max-width-xl: 1140px;
+
+$sm: 480px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1366px;
+
+@mixin max($max) {
+    @media screen and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin min($min) {
+    @media screen and (min-width: ($min + 0.02px)) {
+        @content;
+    }
+}
+
+@mixin min-max($min, $max) {
+    @media screen and (min-width: ($min + 0.02px)) and (max-width: $max) {
+        @content;
+    }
+}
+
+@mixin -media($bp) {
+    @include min($bp) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @include -media($sm) {
+        @content;
+    }
+}
+
+@mixin md {
+    @include -media($md) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @include -media($lg) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @include -media($xl) {
+        @content;
+    }
+}

@@ -1,15 +1,15 @@
-import Container from '../Container/Container';
 import Order from '../Order/Order';
 import Product from '../Product/Product';
 import style from './Catalog.module.css';
 
 import burger from '../../assets/img/burger6.jpg';
+import classNames from 'classnames';
 
 
 export default function Catalog(props) {
     return (
         <section className={style.catalog}>
-            <Container className={style.container}>
+            <div className={classNames('container', style.container)}>
                 <Order className={style.order} />
                 <div className={style.wrapper}>
                     <h3 className={style.title}>Бургеры</h3>
@@ -19,7 +19,7 @@ export default function Catalog(props) {
                         </li>
                     </ul>
                 </div>
-            </Container>
+            </div>
         </section>
     );
 }

@@ -1,12 +1,14 @@
 import style from './Header.module.css';
 import sprite from '../../assets/img/sprite.svg';
-import Container from '../Container/Container';
 import Currency from '../Currency/Currency';
+import Content from '../Content/Content';
+import classNames from 'classnames';
+import Navigation from '../Navigation/Navigation';
 
-export default function Header(props) {
+export default function Header() {
     return (
-        <header className={style.header}>
-            <Container className={style.container}>
+        <header className={classNames('container', style.header)}>
+            <Content className={style.content}>
                 <svg className={style.logo}
                     role="img"
                     aria-label="Логотип компании YourMeal"
@@ -24,7 +26,8 @@ export default function Header(props) {
                         <Currency />
                     </p>
                 </div>
-            </Container>
+            </Content>
+            <Navigation />
         </header>
     );
 }
