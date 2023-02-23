@@ -1,5 +1,5 @@
-import { content } from './Content.module.scss';
 import classNames from 'classnames';
+import { content } from './Content.module.scss';
 
 export default function Content({ className, children }) {
     return (

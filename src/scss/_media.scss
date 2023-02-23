@@ -14,7 +14,7 @@ $max-width-xl: 1140px;
 $sm: 480px;
 $md: 768px;
 $lg: 1024px;
-$xl: 1366px;
+$xl: 1440px;
 
 @mixin max($max) {
     @media screen and (max-width: $max) {

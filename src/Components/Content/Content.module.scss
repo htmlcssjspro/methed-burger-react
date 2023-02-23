@@ -1,1 +1,24 @@
 @use '../../scss/layout';
+@use '../../scss/media';
+
+.content {
+    max-width: layout.$content;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    padding-left: layout.$padding-sm;
+    padding-right: layout.$padding-sm;
+
+    @include media.min(media.$md + layout.$padding-md * 2) {
+        padding-left: layout.$padding-md;
+        padding-right: layout.$padding-md;
+    }
+    @include media.min(media.$lg + layout.$padding-lg * 2) {
+        padding-left: layout.$padding-lg;
+        padding-right: layout.$padding-lg;
+    }
+    @include media.min(media.$xl + layout.$padding-lg * 2) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

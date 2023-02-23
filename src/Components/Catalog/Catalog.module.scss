@@ -1,0 +1,39 @@
+@use '../../scss/media';
+
+.catalog {
+    flex-grow: 1;
+
+    @include media.sm {
+    }
+
+    @include media.md {
+    }
+
+    @include media.lg {
+    }
+
+    @include media.xl {
+    }
+}
+
+.title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 120%;
+    margin-bottom: 16px;
+
+    @include media.lg {
+        font-size: 40px;
+    }
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 145px);
+    gap: 10px;
+
+    @include media.lg {
+        grid-template-columns: repeat(auto-fit, 300px);
+        gap: 30px;
+    }
+}

@@ -1,0 +1,121 @@
+@use '../../scss/colors';
+@use '../../scss/media';
+
+.header {
+    color: colors.$white;
+
+    @include media.sm {
+    }
+
+    @include media.md {
+    }
+
+    @include media.lg {
+    }
+
+    @include media.xl {
+    }
+}
+
+.wrapper {
+    padding: 2em 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='288' height='288' viewBox='0 0 288 288' fill='none'%3E%3Ccircle cx='144' cy='144' r='144' fill='%23FFAB08' /%3E%3C/svg%3E");
+    background-position: center bottom;
+    background-size: 611px;
+    background-repeat: no-repeat;
+
+    @include media.sm {
+        background-size: 1540px;
+    }
+
+    @include media.md {
+        background-size: 2540px;
+    }
+
+    @include media.lg {
+        background-size: 2880px;
+    }
+
+    @include media.xl {
+    }
+}
+
+.logo {
+    width: 150px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.content {
+    width: fit-content;
+    min-height: 355px;
+    margin-top: 2em;
+    padding: 0;
+    background-image: url('../../assets/img/pic.svg');
+    background-position: center bottom;
+    background-size: 227px;
+    background-repeat: no-repeat;
+    text-align: center;
+
+    @include media.sm {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 180px;
+        padding-left: 180px;
+        background-position: left;
+        background-size: contain;
+        text-align: left;
+    }
+
+    @include media.md {
+        min-height: 230px;
+        padding-left: 230px;
+    }
+
+    @include media.lg {
+        min-height: 330px;
+        padding-left: 330px;
+    }
+
+    @include media.xl {
+    }
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    span {
+        display: block;
+    }
+
+    &_red {
+        color: colors.$red;
+    }
+
+    @include media.sm {
+    }
+
+    @include media.md {
+        font-size: 36px;
+    }
+
+    @include media.lg {
+        font-size: 50px;
+    }
+
+    @include media.xl {
+    }
+}
+
+.appeal {
+    padding-top: 2em;
+    font-size: 12px;
+
+    @include media.lg {
+        font-size: 16px;
+    }
+}

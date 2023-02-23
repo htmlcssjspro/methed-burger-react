@@ -1,0 +1,13 @@
+@use '../../scss/layout';
+
+.container {
+    max-width: layout.$container;
+    min-width: layout.$min-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    .container {
+        margin: 0;
+    }
+}

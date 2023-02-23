@@ -1,0 +1,77 @@
+@use '../../scss/colors';
+@use '../../scss/media';
+
+.footer {
+    padding: 2em 0;
+    background-color: #fff;
+}
+
+.content {
+    display: grid;
+    gap: 2em;
+    margin-bottom: 2em;
+
+    @include media.sm {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include media.lg {
+        grid-template-columns: 2fr repeat(2, 1fr);
+    }
+}
+
+.logo {
+    color: #ff7020;
+    width: 196px;
+
+    @include media.sm {
+        grid-column: 1 / -1;
+    }
+
+    @include media.lg {
+        grid-column: span 1;
+        width: 300px;
+    }
+}
+
+.subtitle {
+    font-size: 18px;
+    line-height: 100%;
+    margin-bottom: 8px;
+
+    @include media.lg {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+}
+
+.list {
+    display: flex;
+    gap: 16px;
+}
+
+.link-phone {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    line-height: 130%;
+
+    @include media.lg {
+        font-size: 16px;
+    }
+}
+
+.link-sn {
+    display: block;
+    line-height: 0;
+    color: #ff7020;
+}
+
+.development {
+    font-size: 12px;
+}
+
+.copyright {
+    margin-bottom: 4px;
+}
