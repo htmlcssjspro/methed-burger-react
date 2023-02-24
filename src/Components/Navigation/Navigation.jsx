@@ -1,26 +1,31 @@
-import classNames from 'classnames';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { changeCategory } from '../../store/category/categorySlice';
+import { categoryRequestAsync, changeCategory } from '../../store/category/categorySlice';
+import classNames from 'classnames';
+import { API_HOST } from '../../const';
 import style from './Navigation.module.scss';
 
 export default function Navigation() {
-    const { category, activeCategory } = useSelector(state => state.category);
+    const { category, categoryActive } = useSelector(state => state.category);
     const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(categoryRequestAsync());
+    }, []);
 
     return (
         <nav className={style.navigation}>
             <ul className={style.list}>
                 {category.map((item, i) => (
-                    <li className={style.item}>
+                    <li className={style.item} key={item.title}>
                         <button
                             className={classNames(
                                 style.button,
                                 style.button_burger,
-                                activeCategory === i ? style.button_active : ''
+                                categoryActive === i ? style.button_active : ''
                             )}
-                            style={{ backgroundImage: `url(${item.image})` }}
+                            style={{ backgroundImage: `url(${API_HOST}/${item.image})` }}
                             onClick={() => {
-                                dispatch(changeCategory({ indexCategory: i }));
+                                dispatch(changeCategory({ categoryIndex: i }));
                             }}
                         >
                             {item.rus}

@@ -19,7 +19,7 @@ export default function Order() {
             <div className={style.content}>
                 <ul className={style.list}>
                     {orderList.map(item => (
-                        <li className={style.item}>
+                        <li className={style.item} key={item.title}>
                             <OrderItem title={item.title} image={burger} weight="512" price="550" />
                         </li>
                     ))}

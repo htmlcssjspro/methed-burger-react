@@ -1,6 +1,6 @@
-import style from './OrderItem.module.css';
-import Count from '../Count/Count';
 import Currency from '../Currency/Currency';
+import Count from '../Count/Count';
+import style from './OrderItem.module.scss';
 
 export default function OrderItem(props) {
     return (

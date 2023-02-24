@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import classNames from 'classnames';
-import style from './Count.module.css';
+import style from './Count.module.scss';
 export default function Count(props) {
     const [count, setCount] = useState(props.count);
 

@@ -1,28 +1,34 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { productRequestAsync } from '../../store/product/productSlice';
 import Product from '../Product/Product';
 import style from './Catalog.module.scss';
 
-import burger from '../../assets/img/burger6.jpg';
-
-const goodsList = [
-    { title: 'Мясная бомба' },
-    { title: 'Супер сырный' },
-    { title: 'Сытный' },
-    { title: 'Итальянский' },
-    { title: 'Вечная классика' },
-    { title: 'Тяжелый удар' },
-];
-
 export default function Catalog() {
+    const { products } = useSelector(state => state.product);
+    const { category, categoryActive } = useSelector(state => state.category);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        if (category.length) {
+            dispatch(productRequestAsync(category[categoryActive].title));
+        }
+    }, [category, categoryActive]);
+
     return (
         <main className={style.catalog}>
-            <h3 className={style.title}>Бургеры</h3>
-            <ul className={style.list}>
-                {goodsList.map(item => (
-                    <li className={style.item}>
-                        <Product title={item.title} img={burger} price='685' weight='520' />
-                    </li>
-                ))}
-            </ul>
+            <h3 className={style.title}>{category[categoryActive]?.rus}</h3>
+            { products.length ? (
+                <ul className={style.list}>
+                    {products.map(item => (
+                        <li className={style.item} key={item.id}>
+                            <Product item={item} />
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <p className={style.empty}>К сожалению товаров данной категории нет</p>
+            )}
+
         </main>
     );
 }
