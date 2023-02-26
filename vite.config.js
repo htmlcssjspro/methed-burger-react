@@ -6,9 +6,9 @@ export default defineConfig({
     plugins: [
         react()
     ],
-    build: {
-        sourcemap: true,
-    },
+    // build: {
+    //     sourcemap: true,
+    // },
     css: {
         devSourcemap: true,
     },

@@ -67,7 +67,8 @@ export default function Footer() {
 
             <Content className={style.development}>
                 <p className={style.copyright}>© YouMeal, 2022</p>
-                <a className={style['contact-dev']} href="#" >Design: Anastasia Ilina</a>
+                <p className={style.dev}>Designer: <a href="https://t.me/mrshmallowww">Anastasia Ilina</a></p>
+                <p className={style.dev}>Developer: <a href="https://t.me/militer_htmlcssjspro">Сергей MILITER</a></p>
             </Content>
         </footer>
     );

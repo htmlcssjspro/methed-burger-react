@@ -5,7 +5,8 @@ import Header from './Components/Header/Header';
 import Order from './Components/Order/Order';
 import Catalog from './Components/Catalog/Catalog';
 import Footer from './Components/Footer/Footer';
-import './App.scss';
+import ModalDelivery from './Components/ModalDelivery/ModalDelivery';
+import style from './App.scss';
 
 export default function App() {
     return (
@@ -16,6 +17,7 @@ export default function App() {
                 <Catalog />
             </Content>
             <Footer />
+            <ModalDelivery />
         </Provider>
     );
 }

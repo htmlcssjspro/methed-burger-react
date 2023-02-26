@@ -1,20 +1,22 @@
 import Currency from '../Currency/Currency';
 import Count from '../Count/Count';
 import style from './OrderItem.module.scss';
+import { API_HOST } from '../../const';
 
-export default function OrderItem(props) {
+export default function OrderItem({ item }) {
     return (
+        // title={item.title} image={burger} weight="512" price="550"
         <>
-            <img className={style.image} src={props.image} alt={props.title} />
+            <img className={style.image} src={`${API_HOST}/${item.image}`} alt={item.title} />
             <div className={style.product}>
-                <h3 className={style.title}>{props.title}</h3>
-                <p className={style.weight}>{`${props.weight}г`}</p>
+                <h3 className={style.title}>{item.title}</h3>
+                <p className={style.weight}>{`${item.weight}г`}</p>
                 <p className={style.price}>
-                    {props.price}
+                    {item.price}
                     <Currency />
                 </p>
             </div>
-            <Count className={style.count} count={2} />
+            <Count className={style.count} id={item.id} count={item.count} />
         </>
     );
 }

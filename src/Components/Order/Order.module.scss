@@ -4,17 +4,18 @@
 .order {
     min-height: 48px;
     border-radius: 12px;
+    width: 300px;
+
+    &_open {
+    }
 
     @include media.sm {
     }
-
     @include media.md {
     }
-
     @include media.lg {
         padding-top: 72px;
     }
-
     @include media.xl {
     }
 }
@@ -42,6 +43,10 @@
 
 .content {
     display: none;
+
+    @at-root .order_open & {
+        display: block;
+    }
 
     @include media.lg {
         display: block;
@@ -92,8 +97,11 @@
         background-color: #f86310;
     }
     &:disabled {
-        color: #acacac;
-        background-color: #f9f9f9;
+        // color: #acacac;
+        // background-color: #f9f9f9;
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: no-drop;
     }
 }
 

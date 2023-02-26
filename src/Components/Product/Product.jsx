@@ -1,11 +1,14 @@
 import { useDispatch } from 'react-redux';
 import Currency from '../Currency/Currency';
 import { API_HOST } from '../../const';
-import style from './Product.module.css';
 import { addProduct } from '../../store/order/orderSlice';
+import style from './Product.module.css';
 
 export default function Product({ item }) {
     const dispatch = useDispatch();
+    const add = () => {
+        dispatch(addProduct({ id: item.id }));
+    };
 
     return (
         <article className={style.product}>
@@ -19,9 +22,7 @@ export default function Product({ item }) {
             </h3>
             <p className={style.weight}>{`${item.weight}г`}</p>
             <button className={style.add} type="button"
-                onClick={() => {
-                    dispatch(addProduct({ id: item.id }));
-                }}
+                onClick={add}
             >Добавить</button>
         </article>
     );

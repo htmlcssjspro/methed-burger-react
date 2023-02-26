@@ -4,27 +4,29 @@
 .navigation {
     padding-top: 2em;
     padding-bottom: 2em;
+
+    @include media.sm {
+    }
+    @include media.md {
+    }
+    @include media.lg {
+    }
+    @include media.xl {
+    }
 }
 
 .list {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
-    overflow-x: auto;
-
-    @include media.sm {
-    }
 
     @include media.md {
         gap: 12px;
     }
-
     @include media.lg {
         gap: 24px;
-    }
-
-    @include media.xl {
     }
 }
 
@@ -41,20 +43,20 @@
     outline: none;
     white-space: nowrap;
 
+    &:hover,
+    &:focus-visible {
+        border-color: colors.$accent;
+    }
+
+    &_active {
+        background-color: colors.$active;
+        pointer-events: none;
+    }
+
     @include media.lg {
         padding: 9px 14px 9px 46px;
         font-size: 16px;
         line-height: 22px;
         background-position: 14px center;
     }
-}
-
-.button:hover,
-.button:focus-visible {
-    border-color: colors.$accent;
-}
-
-.button_active {
-    background-color: colors.$active;
-    pointer-events: none;
 }

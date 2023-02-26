@@ -12,19 +12,22 @@ export const productRequestAsync = createAsyncThunk(
 const productSlice = createSlice({
     name:         'product',
     initialState: {
-        products: [],
-        error:    '',
+        products:     [],
+        productsFlag: false,
+        error:        '',
     },
     extraReducers: builder => {
         builder
-            .addCase(productRequestAsync.pending.type, state => {
+            .addCase(productRequestAsync.pending, state => {
                 state.error = '';
+                state.productsFlag = false;
             })
-            .addCase(productRequestAsync.fulfilled.type, (state, action) => {
+            .addCase(productRequestAsync.fulfilled, (state, action) => {
                 state.error = '';
                 state.products = action.payload;
+                state.productsFlag = true;
             })
-            .addCase(productRequestAsync.rejected.type, (state, action) => {
+            .addCase(productRequestAsync.rejected, (state, action) => {
                 state.error = action.payload.error;
             });
     }

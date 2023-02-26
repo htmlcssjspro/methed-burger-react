@@ -5,7 +5,7 @@ import Product from '../Product/Product';
 import style from './Catalog.module.scss';
 
 export default function Catalog() {
-    const { products } = useSelector(state => state.product);
+    const { products, productsFlag } = useSelector(state => state.product);
     const { category, categoryActive } = useSelector(state => state.category);
     const dispatch = useDispatch();
     useEffect(() => {
@@ -25,7 +25,7 @@ export default function Catalog() {
                         </li>
                     ))}
                 </ul>
-            ) : (
+            ) : productsFlag && (
                 <p className={style.empty}>К сожалению товаров данной категории нет</p>
             )}
 
