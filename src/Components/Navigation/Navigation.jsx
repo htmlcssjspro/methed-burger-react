@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { categoryRequestAsync, changeCategory } from '../../store/category/categorySlice';
 import classNames from 'classnames';
-import { API_HOST } from '../../const';
+import { categoryRequestAsync, changeCategory } from '../../store/category/categorySlice';
+import { apiImageURI } from '../../api';
 import style from './Navigation.module.scss';
 
 export default function Navigation() {
@@ -23,7 +23,7 @@ export default function Navigation() {
                                 style.button_burger,
                                 categoryActive === i ? style.button_active : ''
                             )}
-                            style={{ backgroundImage: `url(${API_HOST}/${item.image})` }}
+                            style={{ backgroundImage: `url(${apiImageURI(item.image)})` }}
                             onClick={() => {
                                 dispatch(changeCategory({ categoryIndex: i }));
                             }}

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
+import { apiImageURI } from '../../api';
 import Currency from '../Currency/Currency';
-import { API_HOST } from '../../const';
 import { addProduct } from '../../store/order/orderSlice';
 import style from './Product.module.css';
 
@@ -12,7 +12,7 @@ export default function Product({ item }) {
 
     return (
         <article className={style.product}>
-            <img className={style.image} src={`${API_HOST}/${item.image}`} alt={item.title} />
+            <img className={style.image} src={apiImageURI(item.image)} alt={item.title} />
             <p className={style.price}>
                 {item.price}
                 <Currency />

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { API_PRODUCT } from '../../const';
+import { apiProductsListURI } from '../../api';
 
 export const localStorageMiddleware = store => next => action => {
     const nextAction = next(action);
@@ -17,7 +17,7 @@ export const orderRequestAsync = createAsyncThunk(
     (_, { getState }) => {
         const idList = getState().order.orderList.map(item => item.id);
 
-        return fetch(`${API_PRODUCT}?list=${idList}`)
+        return fetch(apiProductsListURI(idList))
             .then(response => response.json())
             .catch(error => ({ error }));
     }

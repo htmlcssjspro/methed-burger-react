@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { API_PRODUCT } from '../../const';
+import { apiProductsCategoryURI } from '../../api';
 
 export const productRequestAsync = createAsyncThunk(
     'product/fetch',
     (category) =>
-        fetch(`${API_PRODUCT}?category=${category}`)
+        fetch(apiProductsCategoryURI(category))
             .then(response => response.json())
             .catch(error => ({ error }))
 );

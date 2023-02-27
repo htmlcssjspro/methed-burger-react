@@ -6,7 +6,7 @@ import Order from './Components/Order/Order';
 import Catalog from './Components/Catalog/Catalog';
 import Footer from './Components/Footer/Footer';
 import ModalDelivery from './Components/ModalDelivery/ModalDelivery';
-import style from './App.scss';
+import './App.scss';
 
 export default function App() {
     return (
