@@ -1,7 +1,7 @@
 import path from 'node:path';
-import { readFile, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import * as url from 'url';
-const __filename = url.fileURLToPath(import.meta.url);
+// const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 export default async function handler(req, res) {
@@ -14,14 +14,10 @@ export default async function handler(req, res) {
                 ? 'image/png'
                 : 'application/octet-stream';
 
-    const imagePath = path.join(process.cwd(), 'api', 'img', image);
-    res.setHeader('content-type', contentType);
-
-    // readFile(imagePath, (err, imageBuffer) => {
-    //     if (err) throw err;
-    //     res.status(200).send(imageBuffer);
-    // });
-
+    // const imagePath = path.join(process.cwd(), 'api', 'img', 'images', image);
+    const imagePath = path.resolve(__dirname, 'images', image);
     const imageBuffer = readFileSync(imagePath);
+
+    res.setHeader('content-type', contentType);
     res.status(200).send(imageBuffer);
 }
