@@ -1,11 +1,6 @@
-const { protocol, hostname, port } = window.location;
-console.log('protocol: ', protocol);
-console.log('hostname: ', hostname);
-console.log('port: ', port);
+const { protocol, host } = window.location;
 
-const API_HOST_test = `${protocol}://${hostname}:${port}`;
-console.log('API_HOST_test: ', API_HOST_test);
-const API_HOST = 'http://localhost:3000';
+const API_HOST = `${protocol}//${host}`;
 const API_URI = `${API_HOST}/api`;
 
 export const apiCategories = () => `${API_URI}/categories`;

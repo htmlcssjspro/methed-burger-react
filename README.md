@@ -3,7 +3,7 @@
 Учебный проект школы METHED
 
 ### Инструменты
-React
-Redux Toolkit
-Vite
-SCSS
+- React
+- Redux Toolkit
+- Vite
+- SCSS
