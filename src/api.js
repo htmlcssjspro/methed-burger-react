@@ -2,6 +2,7 @@ const { protocol, host } = window.location;
 
 const API_HOST = `${protocol}//${host}`;
 const API_URI = `${API_HOST}/api`;
+console.log('API_URI: ', API_URI);
 
 export const apiCategories = () => `${API_URI}/categories`;
 export const apiImageURI = image => `${API_URI}/img/${image}`;

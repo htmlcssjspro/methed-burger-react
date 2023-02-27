@@ -14,16 +14,19 @@ export default async function handler(req, res) {
                 ? 'image/png'
                 : 'application/octet-stream';
 
-
+    // const imagePath = path.resolve('.', image);
     // const imagePath = path.resolve(__dirname, image);
+    // const imagePath = path.join(process.cwd(), 'api', 'img', image);
+
+    // readFile(imagePath, (err, imageBuffer) => {
+    //     if (err) throw err;
+    //     res.setHeader('content-type', contentType);
+    //     res.status(200).send(imageBuffer);
+    // });
+
     const imagePath = path.join(process.cwd(), 'api', 'img', image);
+    const imageBuffer = readFileSync(imagePath);
 
-    readFile(imagePath, (err, imageBuffer) => {
-        res.setHeader('content-type', contentType);
-        res.status(200).send(imageBuffer);
-    });
-
-    // const imageBuffer = readFileSync(imagePath);
-    // res.setHeader('content-type', contentType);
-    // res.send(imageBuffer);
+    res.setHeader('Content-Type', 'image/jpeg');
+    return res.end(imageBuffer);
 }
