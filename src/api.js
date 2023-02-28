@@ -14,3 +14,7 @@ export const apiProductsCategoryURI = category =>
     `${API_PRODUCTS}/category/${category}`;
 export const apiProductsListURI = list =>
     `${API_PRODUCTS}/list?list=${list}`;
+
+export const apiOrderURI = () =>
+    `${API_URI}/order`;
+    // 'https://cloudy-slash-rubidium.glitch.me/api/order'

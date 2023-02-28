@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { apiOrderURI } from '../../api';
 import { closeModal } from '../modal/modalSlice';
 import { clearOrder } from '../order/orderSlice';
 
@@ -42,7 +43,7 @@ export const submitForm = createAsyncThunk(
     async (data, { dispatch, rejectWithValue }) => {
         try {
             const response = await fetch(
-                'https://cloudy-slash-rubidium.glitch.me/api/order',
+                apiOrderURI(),
                 {
                     method:  'POST',
                     headers: {

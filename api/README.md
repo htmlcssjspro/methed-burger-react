@@ -15,3 +15,7 @@ GET /api/products/{id} - получить один товар по ID
 GET /api/products/list?list={id,id,id} - получить список товаров по ID
 
 GET /api/img/{image} - получить картинку по названию файла
+
+
+POST /api/order - отправить заказ
+GET /api/orders - посмотреть все заказы
